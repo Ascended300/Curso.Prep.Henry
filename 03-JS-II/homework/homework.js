@@ -165,7 +165,7 @@ function esPrimo(numero) {
     var aux = true;
     if (aux) {
         for (var i = 0; i < numero / 2; i++) {
-            if (numero % i === 0) {
+            if (numero % i === 0 && numero === 0 && numero === 1) {
                 aux = false;
             }
         }
