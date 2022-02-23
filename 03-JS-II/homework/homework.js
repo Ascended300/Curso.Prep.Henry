@@ -162,12 +162,16 @@ function esPrimo(numero) {
     // Pista: un número primo solo es divisible por sí mismo y por 1
     // Pista 2: Puedes resolverlo usando un bucle `for`
     // Nota: Los números 0 y 1 NO son considerados números primos
-    for (var mul = 2; mul <= (numero / 2); mul++) {
-        if (numero % mul === 0 || numero === 0 || numero === 1) {
-            return true;
-        } else {
-            return false;
+    var aux = true;
+    if (aux) {
+        for (var i = 0; i < numero / 2; i++) {
+            if (numero % i === 0) {
+                aux = false;
+            }
         }
+        return true;
+    } else {
+        return false;
     }
 }
 
