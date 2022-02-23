@@ -163,10 +163,10 @@ function esPrimo(numero) {
     // Pista 2: Puedes resolverlo usando un bucle `for`
     // Nota: Los números 0 y 1 NO son considerados números primos
     for (var mul = 2; mul <= (numero / 2); mul++) {
-        if (numero % mul !== 0 || numero !== 0 || numero !== 1) {
-            return false;
-        } else {
+        if (numero % mul === 0 || numero === 0 || numero === 1) {
             return true;
+        } else {
+            return false;
         }
     }
 }
@@ -214,7 +214,7 @@ function doWhile(numero) {
         numero += 5;
         aux++;
     } while (aux < 8);
-    return aux;
+    return numero;
 }
 
 
