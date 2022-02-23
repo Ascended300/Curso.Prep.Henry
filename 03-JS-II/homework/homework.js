@@ -163,7 +163,7 @@ function esPrimo(numero) {
     // Pista 2: Puedes resolverlo usando un bucle `for`
     // Nota: Los números 0 y 1 NO son considerados números primos
     for (var mul = 2; mul <= (numero / 2); mul++) {
-        if (numero % mul === 0 || numero === 0 || numero === 1) {
+        if (numero % mul !== 0 || numero !== 0 || numero !== 1) {
             return false;
         } else {
             return true;
@@ -190,14 +190,14 @@ function tablaDelSeis() {
         tabladel6.push(aux);
 
     }
-    return tablaDelSeis;
+    return tabladel6;
 
 }
 
 function tieneTresDigitos(numero) {
     //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
     //Escribe tu código aquí
-    if ((numero / 100) >= 1 && (numero / 100) > 10) {
+    if ((numero / 100) >= 1 && (numero / 100) < 10) {
         return true;
     } else {
         return false;
@@ -213,7 +213,8 @@ function doWhile(numero) {
     do {
         numero += 5;
         aux++;
-    } while (aux < 7);
+    } while (aux < 8);
+    return aux;
 }
 
 
