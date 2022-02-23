@@ -164,14 +164,14 @@ function esPrimo(numero) {
     // Nota: Los números 0 y 1 NO son considerados números primos
     var aux = true;
     if (aux) {
-        for (var i = 0; i < numero / 2; i++) {
+        for (var i = 2; i < numero / 2; i++) {
             if (numero % i === 0 && numero === 0 && numero === 1) {
                 aux = false;
             }
         }
-        return true;
-    } else {
         return false;
+    } else {
+        return true;
     }
 }
 
