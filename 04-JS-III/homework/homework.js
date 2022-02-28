@@ -85,7 +85,7 @@ function promedioResultadosTest(resultadosTest) {
     // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
     // Tu código:
 
-    return resultadosTest.reduce(((a, b) => a + b) / resultadosTest.length);
+    return resultadosTest.reduce(((a, b) => a + b)) / resultadosTest.length;
 }
 
 
@@ -93,7 +93,7 @@ function numeroMasGrande(numeros) {
     // "numeros" debe ser una matriz de enteros (int/integers)
     // Devuelve el número más grande
     // Tu código:
-    return Math.max(numeros);
+    return Math.max.apply(null, numeros);
 }
 
 
@@ -102,7 +102,7 @@ function multiplicarArgumentos() {
        // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
     // Escribe tu código aquí:
     if (arguments.length > 0) {
-        return arguments.reduce((a, b) => a * b);
+        return Object.values(arguments).reduce((acc, cur) => acc * cur);
     } else {
         return 0;
     }
@@ -123,7 +123,7 @@ function diaDeLaSemana(numeroDeDia) {
     //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
     //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
     //Escribe tu código aquí
-    return (numeroDeDia === 1 || numeroDeDia === 7) ? 'Es fin de semana' : 'Es día laboral';
+    return (numeroDeDia === 1 || numeroDeDia === 7) ? 'Es fin de semana' : 'Es dia Laboral';
 
 }
 
@@ -132,7 +132,7 @@ function empiezaConNueve(n) {
     //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
     //inicia con 9 y false en otro caso.
     //Escribe tu código aquí
-    return n.toString()[0] === 9;
+    return parseInt(n.toString()[0]) === 9;
 
 }
 
@@ -174,13 +174,14 @@ function breakStatement(numero) {
     // Tu código:
     var array = [];
     for (var i = 0; i < 10; i++) {
-        numero.push(numero);
         numero += 2;
+        array.push(numero);
         if (numero === i) {
             return 'Se interrumpió la ejecución';
             break;
         }
     }
+    return array;
 
 }
 
@@ -193,14 +194,15 @@ function continueStatement(numero) {
     //Pista: usá el statement 'continue'
     // Tu código:
     var array = [];
-    for (var i; i < 10; i++) {
-        if (i === 4) {
-            continue
-        } else {
-            array.push(numero);
+    for (var i = 0; i < 10; i++) {
+        if (i !== 4) {
             numero += 2;
+            array.push(numero);
+        } else {
+            continue
         }
     }
+    return array;
 }
 
 
